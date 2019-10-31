@@ -23,7 +23,7 @@ time.sleep(2)     //time to settle the sensor
  
 while 1:
         g.output(trig,1)
-        time.sleep(0.00001)           //trigger provided
+        time.sleep(0.00005)           //trigger provided
         g.output(trig,0)
         while g.input(echo)==0:
                 ts=time.time()
@@ -31,7 +31,7 @@ while 1:
                 te=time.time()
         t=te-ts
         d=17150*t                     //in centimeters
-        time.sleep(0.5)
+        time.sleep(0.8)
         print(int(d))
         cars=int(d/100)               //each parking space is of 100cm 
         print("no. of cars parked:",cars)
